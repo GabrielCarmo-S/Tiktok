@@ -20,7 +20,10 @@ const styles = StyleSheet.create({
   },
 
   bottomContainer: {
-    padding: 10
+    padding: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end'
   },
 
   handle: {
@@ -46,6 +49,14 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     marginLeft: 5
+  },
+
+  songImage: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    borderWidth: 5,
+    borderColor: '#fff',
   },
 
   // RIGHT CONTAINER

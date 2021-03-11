@@ -8,14 +8,14 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Fontisto from "react-native-vector-icons/Fontisto";
 
+const Post = (props: { post: any }) => {
+  const { post } = props;
 
-const Post = () => {
   return (
     <View style={styles.container}>
       <Video
         source={{
-          uri:
-            "https://d8vywknz0hvjw.cloudfront.net/fitenium-media-prod/videos/45fee890-a74f-11ea-8725-311975ea9616/proccessed_720.mp4",
+          uri: post.videoUri,
         }}
         style={styles.video}
         shouldPlay
@@ -28,35 +28,43 @@ const Post = () => {
           <Image
             style={styles.profilePicture}
             source={{
-              uri:
-                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu8GrR4JDZhoglUgxri3V6xJFfm60u95UEcA&usqp=CAU",
+              uri: post.user.imageUri,
             }}
           />
 
           <View style={styles.iconContainer}>
             <AntDesign name={"heart"} size={40} color="white" />
-            <Text style={styles.statsLabel}>123</Text>
+            <Text style={styles.statsLabel}>{post.likes}</Text>
           </View>
 
           <View style={styles.iconContainer}>
             <FontAwesome name={"commenting"} size={40} color="white" />
-            <Text style={styles.statsLabel}>123</Text>
+            <Text style={styles.statsLabel}>{post.comments}</Text>
           </View>
 
           <View style={styles.iconContainer}>
             <Fontisto name={"share-a"} size={35} color="white" />
-            <Text style={styles.statsLabel}>123</Text>
+            <Text style={styles.statsLabel}>{post.shares}</Text>
           </View>
         </View>
 
         <View style={styles.bottomContainer}>
-          <Text style={styles.handle}>@gabrielcarmo-s</Text>
-          <Text style={styles.description}>kkkkkkkkkkkkkkkkkk</Text>
+          <View>
+            <Text style={styles.handle}>{post.user.username}</Text>
+            <Text style={styles.description}>{post.description}</Text>
 
-          <View style={styles.songRow}>
-            <Entypo name={"beamed-note"} size={24} color="white" />
-            <Text style={styles.songName}>Nf - The Search</Text>
+            <View style={styles.songRow}>
+              <Entypo name={"beamed-note"} size={24} color="white" />
+              <Text style={styles.songName}>{post.songName}</Text>
+            </View>
           </View>
+
+          <Image
+            style={styles.songImage}
+            source={{
+              uri: post.songImage,
+            }}
+          />
         </View>
       </View>
     </View>
