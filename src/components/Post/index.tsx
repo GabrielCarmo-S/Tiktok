@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, Image, View } from "react-native";
+import { Text, Image, View, TouchableOpacity } from "react-native";
 import { Video } from "expo-av";
 import styles from "./styles";
 
@@ -9,7 +9,16 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import Fontisto from "react-native-vector-icons/Fontisto";
 
 const Post = (props: { post: any }) => {
-  const { post } = props;
+  const [post, setPost] = useState(props.post);
+
+  const [isLiked, setIsLiked] = useState(false);
+
+  const onLikePress = () => {
+    const likesToAdd = isLiked ? -1 : 1;
+    setPost({...post, likes: post.likes + likesToAdd});
+
+    setIsLiked(!isLiked);
+  };
 
   return (
     <View style={styles.container}>
@@ -32,10 +41,10 @@ const Post = (props: { post: any }) => {
             }}
           />
 
-          <View style={styles.iconContainer}>
-            <AntDesign name={"heart"} size={40} color="white" />
+          <TouchableOpacity style={styles.iconContainer} onPress={onLikePress}>
+            <AntDesign name={"heart"} size={40} color={isLiked ? 'red' : 'white'} />
             <Text style={styles.statsLabel}>{post.likes}</Text>
-          </View>
+          </TouchableOpacity>
 
           <View style={styles.iconContainer}>
             <FontAwesome name={"commenting"} size={40} color="white" />

@@ -77,14 +77,15 @@ const styles = StyleSheet.create({
   },
 
   iconContainer: {
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 10
   },
 
   statsLabel: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 10,
     fontWeight: '600',
-    marginTop: 5
+    marginTop: 2
   }
 
 });
