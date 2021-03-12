@@ -1,6 +1,5 @@
 import React from "react";
 import { SafeAreaView, StatusBar } from "react-native";
-import Home from "./src/screens/Home";
 import 'react-native-gesture-handler'
 import Navigation from './src/navigation'
 import Amplify from 'aws-amplify';
