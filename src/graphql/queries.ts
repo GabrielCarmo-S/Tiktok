@@ -8,6 +8,7 @@ export const getUser = /* GraphQL */ `
       id
       username
       email
+      imageUri
       posts {
         items {
           id
@@ -36,6 +37,7 @@ export const listUsers = /* GraphQL */ `
         id
         username
         email
+        imageUri
         posts {
           nextToken
         }
@@ -57,6 +59,7 @@ export const getPost = /* GraphQL */ `
         id
         username
         email
+        imageUri
         posts {
           nextToken
         }
@@ -92,6 +95,7 @@ export const listPosts = /* GraphQL */ `
           id
           username
           email
+          imageUri
           createdAt
           updatedAt
         }
