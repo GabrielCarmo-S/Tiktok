@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /home/gabriel/.yarn/bin/yarn.js add @types/aws-amplify-react-native -D
+  /usr/bin/node /home/gabriel/.yarn/bin/yarn.js add @types/aws-amplify-react-native
 
 PATH: 
   /home/gabriel/.yarn/bin:/home/gabriel/.config/yarn/global/node_modules/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
